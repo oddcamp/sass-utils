@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// TEXT OVERFLOW ELLIPSIS
+
+@mixin text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// -----------------------------------------------------------------------------
+// HIDDEN TEXT
+
+@mixin text-hidden {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

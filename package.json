@@ -1,0 +1,52 @@
+{
+  "name": "sass-utils",
+  "version": "1.0.0",
+  "description": "Kollegorna's SASS utilities",
+  "main": "src/_all.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kollegorna/sass-utils.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kollegorna/sass-utils/issues"
+  },
+  "homepage": "https://github.com/kollegorna/sass-utils#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-stylelint": "^6.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-empty-line-before": null,
+      "block-opening-brace-space-before": null,
+      "at-rule-no-unknown": [ true, {
+        "ignoreAtRules": [
+          "extend",
+          "at-root",
+          "debug",
+          "warn",
+          "error",
+          "if",
+          "else",
+          "for",
+          "each",
+          "while",
+          "mixin",
+          "include",
+          "content",
+          "return",
+          "function"
+        ]
+      }]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// MEDIA QUERIES BREAKPOINTS
+
+$mq-breakpoints: (
+  xxxsmall:  0,
+  xxsmall:   320,
+  xsmall:    480,
+  small:     640,
+  medium:    768,
+  large:     960,
+  xlarge:    1024,
+  xxlarge:   1200,
+  xxxlarge:  1400,
+  xxxxlarge: 1680
+) !default;
+
+// -----------------------------------------------------------------------------
+// MEDIA QUERIES MIXIN
+// Usage examples:
+//  - mq(medium down)
+//  - mq(large up)
+//  - mq(between small large)
+//  - mq(portrait)
+//  - mq(portrait, between small medium, xxxxlarge up, xxsmall down)
+
+@mixin mq($args...) {
+  $conditions: ();
+  $medium:     "screen";
+
+  @each $group in $args {
+    $arg1: nth($group, 1);
+
+    @if index(("landscape", "portrait"), $arg1) {
+      $conditions: append($conditions, '(orientation: #{$arg1})');
+    }
+    @else if $arg1 == "between" {
+      $from:       em(map-get($mq-breakpoints, nth($group, 2)) + 1);
+      $to:         em(map-get($mq-breakpoints, nth($group, 3)));
+      $conditions: append($conditions, "(min-width: #{$from}) and (max-width: #{$to})");
+    }
+    @else { // breakpoint
+      $point:     map-get($mq-breakpoints, $arg1);
+      $direction: nth($group, 2);
+
+      @if $direction == "up" {
+        $direction: "min-width";
+        $point: $point + 1;
+      }
+      @else {
+        $direction: "max-width";
+      }
+
+      $point: em($point);
+      $conditions: append($conditions, '(#{$direction}: #{$point})');
+    }
+  }
+
+  $conditions_str: "";
+  $is_first:   true;
+
+  @each $condition in $conditions {
+    @if $is_first == false {
+      $conditions_str: "#{$conditions_str}, ";
+    }
+    $conditions_str: "#{$conditions_str} #{$medium} and #{$condition}";
+    $is_first: false;
+  }
+
+  @media #{$conditions_str} {
+    @content;
+  }
+}

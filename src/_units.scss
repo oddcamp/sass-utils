@@ -1,0 +1,54 @@
+// -----------------------------------------------------------------------------
+// STRIP UNIT
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// -----------------------------------------------------------------------------
+// EM/REM CALC
+// Usage examples:
+//  - rem(10px)
+//  - rem(10)
+//  - rem(10 20)
+//  - rem(10 20 30 40)
+//  - rem(20 auto)
+
+$em-base: 16px !default;
+
+@function emrem($values, $base-value: $em-base, $type: "em") {
+  $max: length($values);
+  $newValues: ();
+
+  @if $type == "em" {
+    $type: 1em;
+  }
+  @else {
+    $type: 1rem;
+  }
+
+  @for $i from 1 through $max {
+    $iVal: nth($values, $i);
+
+    @if $iVal != auto {
+      $iVal: strip-unit($iVal) / strip-unit($base-value) * $type;
+    }
+
+    $newValues: append($newValues, $iVal);
+  }
+
+  @if $max == 1 {
+    @return nth($newValues, 1);
+  }
+  @else {
+    @return $newValues;
+  }
+}
+
+@function em($values, $base-value: $em-base) {
+  @return emrem($values, $base-value, "em");
+}
+
+@function rem($values, $base-value: $em-base) {
+  @return emrem($values, $base-value, "rem");
+}
