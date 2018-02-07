@@ -5,7 +5,11 @@ A starter package for every SASS project.
 ## Usage
 
 1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the latest commit for a new project
-2. Include `src/_all.scss` in your project. This will:
+2. Add it to your project:
+
+   `@import "sass-utils/src/_all";`
+
+    This will:
     - Make all of the SASS utilities available
     - Inject Reset CSS
 
