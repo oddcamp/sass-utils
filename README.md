@@ -13,11 +13,12 @@ For non-SASS projects include `dist/reset.css` only.
 
 ## Development
 
-1. Run `gulp` when developing. This will:
+1. Install dependencies with `$ yarn`
+2. Run `$ gulp` when developing. This will:
     - Run the linter for your own good
     - Generate `reset.css` file for non-SASS projects
 
-2. Edit contents of `src`
+3. Edit contents of `src`
 
 ## Else...
 
