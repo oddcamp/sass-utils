@@ -12,11 +12,7 @@ gulp.task('sass', () => {
 
 gulp.task('stylelint', () => {
   return gulp.src('./src/**/*.scss')
-  .pipe(stylelint({
-    reporters: [
-      {formatter: 'string', console: true}
-    ]
-  }))
+  .pipe(stylelint({reporters: [{formatter: 'string', console: true}]}))
 })
 
 gulp.task('default', ['stylelint', 'sass'], () => {
