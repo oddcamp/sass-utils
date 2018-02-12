@@ -7,7 +7,7 @@ A starter package for every SASS project.
 1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the latest commit for a new project
 2. Add it to your project:
 
-   `@import "sass-utils/src/_all";`
+   `@import "sass-utils/src/all";`
 
     This will:
     - Make all of the SASS utilities available
@@ -24,6 +24,163 @@ For non-SASS projects include `dist/reset.css` only.
 
 3. Edit contents of `src`
 
-## Else...
+## Documentation
 
-For now, browse `src/*` to get to know the utilities. Documentation is on the way...
+### [Media Queries](https://github.com/kollegorna/sass-utils/blob/master/src/_mq.scss)
+
+#### `$mq-breakpoints` variable
+
+A map of viewport breakpoints for a use with `mq()` mixin. Default value:
+
+```scss
+$mq-breakpoints: (
+  xxxsmall:  0,
+  xxsmall:   320,
+  xsmall:    480,
+  small:     640,
+  medium:    768,
+  large:     960,
+  xlarge:    1024,
+  xxlarge:   1200,
+  xxxlarge:  1400,
+  xxxxlarge: 1680
+);
+```
+
+#### `mq()` mixin
+
+A media query mixin. Works in a couple with `$mq-breakpoints` map. Accepts multiple values, e.g.:
+
+```scss
+@include mq(medium down) {
+  // <= 768px
+  // screen and (max-width: 48em)
+}
+
+@include mq(large up) {
+  // > 960px
+  // screen and (min-width: 60.0625em)
+}
+
+@include mq(between small large) {
+  // 640px < x <= 960px
+  // screen and (min-width: 40.0625em) and (max-width: 60em)
+}
+
+@include mq(portrait) {
+  // screen and (orientation: portrait)
+}
+
+@include mq(portrait, between small medium, xxxxlarge up, xsmall down) {
+  // orientation: portrait, 640px < x <= 768px, > 1680px, <= 480px
+  // screen and (orientation: portrait), screen and (min-width: 40.0625em) and (max-width: 48em),  screen and (min-width: 105.0625em), screen and (max-width: 20em)
+}
+
+// Nest the mixin inclusion for "AND" operator instead:
+@include mq(portrait) {
+  @include mq(xxsmall down) {
+    // orientation: portrait AND <= 480px
+    // screen and (orientation: portrait) and (max-width: 20em)
+  }
+}
+```
+
+### [Units](https://github.com/kollegorna/sass-utils/blob/master/src/_units.scss)
+
+#### `em()` and `rem()` functions
+
+Converts pixels to em/rem's respectively, e.g.:
+
+```scss
+em(20) // 1.25em
+em(20px) // 1.25em
+rem(16) // 1rem
+rem(20 40) // 1.25rem 2.5rem
+rem(20 40 0) // 1.25rem 2.5rem 0 2.5rem
+rem(40 auto) // 2.5rem auto
+```
+
+Overwrite the value of `$em-base` to change the base value. Default: `16px`. You can also pass it as a second parameter for `em/rem()`.
+
+#### `strip-unit()` function
+
+Returns digits-only value: `strip-unit(16px) -> 16`.
+
+### [String](https://github.com/kollegorna/sass-utils/blob/master/src/_string.scss)
+
+#### `svg-inline()` function
+
+Makes SVG inline-able, e.g.:
+
+```scss
+background-image: url(svg-inline('<svg viewBox="0 0 10 10"><style>path{fill:#c00;}</style><path d="m5 9-3-4h2v-4h2v4h2z"/></svg>'));
+
+// becomes
+
+background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%220%200%2010%2010%22%3E%3Cstyle%3Epath{fill:#c00;}%3C/style%3E%3Cpath%20d=%22m5%209-3-4h2v-4h2v4h2z%22/%3E%3C/svg%3E");
+```
+
+#### `str-replace()` function
+
+Replaces strings: `str-replace("abc", "a", "b") -> "bbc"`.
+
+### [Type](https://github.com/kollegorna/sass-utils/blob/master/src/_type.scss)
+
+#### `text-overflow-ellipsis()` mixin
+
+Hides the text in a block element and appends ellipsis, e.g. `Today is...`.
+
+#### `text-hidden()` mixin
+
+Visually hides the text without a [performance hit](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/). Keeps the text accessible for screen readers.
+
+### [Animations](https://github.com/kollegorna/sass-utils/blob/master/src/_animations.scss)
+
+#### Easings
+
+The variable list of CSS animation [easings](http://easings.net):
+
+```scss
+// Sine:
+$easing-in-sine
+$easing-out-sine
+$easing-in-out-sine
+// Quad:
+$easing-in-quad
+$easing-out-quad
+$easing-in-out-quad
+// Cubic:
+$easing-in-cubic
+$easing-out-cubic
+$easing-in-out-cubic
+// Quart:
+$easing-in-quart
+$easing-out-quart
+$easing-in-out-quart
+// Quint:
+$easing-in-quint
+$easing-out-quint
+$easing-in-out-quint
+// Expo:
+$easing-in-expo
+$easing-out-expo
+$easing-in-out-expo
+// Circ
+$easing-in-circ
+$easing-out-circ
+$easing-in-out-circ
+// Back
+$easing-in-back
+$easing-out-back
+$easing-in-out-back
+```
+
+### [Misc](https://github.com/kollegorna/sass-utils/blob/master/src/_misc.scss)
+
+#### `clearfix()` and `unclearfix()` mixins
+
+Clears and "unclears" floats respectively.
+
+#### `vhidden()` mixin
+
+Visually hides an element, keeps it accessible for screen readers, does not exclude it from HTML tab order.

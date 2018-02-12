@@ -1,5 +1,6 @@
 // -----------------------------------------------------------------------------
 // MEDIA QUERIES BREAKPOINTS
+// Used by the mq() mixin
 
 $mq-breakpoints: (
   xxxsmall:  0,
@@ -21,7 +22,7 @@ $mq-breakpoints: (
 //  - mq(large up)
 //  - mq(between small large)
 //  - mq(portrait)
-//  - mq(portrait, between small medium, xxxxlarge up, xxsmall down)
+//  - mq(portrait, between small medium, xxxxlarge up, xsmall down)
 
 @mixin mq($args...) {
   $conditions: ();
@@ -56,7 +57,7 @@ $mq-breakpoints: (
   }
 
   $conditions_str: "";
-  $is_first:   true;
+  $is_first: true;
 
   @each $condition in $conditions {
     @if $is_first == false {
@@ -65,6 +66,8 @@ $mq-breakpoints: (
     $conditions_str: "#{$conditions_str} #{$medium} and #{$condition}";
     $is_first: false;
   }
+
+  @debug #{$conditions_str};
 
   @media #{$conditions_str} {
     @content;

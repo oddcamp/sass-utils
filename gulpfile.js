@@ -4,9 +4,10 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const stylelint = require('gulp-stylelint')
 
+
 gulp.task('sass', () => {
   return gulp.src('./src/**/*.scss')
-    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(sass({sourceComments: true}).on('error', sass.logError))
     .pipe(gulp.dest('./dist'))
 })
 
