@@ -1,4 +1,4 @@
-# Kollegorna's SASS utilities
+# Kollegorna's SASS utilities library
 
 A starter package for every SASS project.
 
