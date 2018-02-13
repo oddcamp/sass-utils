@@ -2,6 +2,16 @@
 
 A starter package for every SASS project.
 
+- [Usage](#usage)
+- [Development](#development)
+- [Documentation](#documentation)
+  * [Media Queries](#media-queries)
+  * [Units](#units)
+  * [String](#string)
+  * [Type](#type)
+  * [Animations](#animations)
+  * [Misc](#misc)
+
 ## Usage
 
 1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the [latest commit](https://github.com/kollegorna/sass-utils/commits/master) for a new project
