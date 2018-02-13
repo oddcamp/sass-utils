@@ -7,7 +7,9 @@ A starter package for every SASS project.
 1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the [latest commit](https://github.com/kollegorna/sass-utils/commits/master) for a new project
 2. Add it to your project:
 
-   `@import "sass-utils/src/all";`
+   ```scss
+   @import "sass-utils/src/all";
+   ```
 
     This will:
     - Make all of the SASS utilities available
