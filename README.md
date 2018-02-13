@@ -4,7 +4,7 @@ A starter package for every SASS project.
 
 ## Usage
 
-1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the latest commit for a new project
+1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the [latest commit](https://github.com/kollegorna/sass-utils/commits/master) for a new project
 2. Add it to your project:
 
    `@import "sass-utils/src/all";`
@@ -12,6 +12,8 @@ A starter package for every SASS project.
     This will:
     - Make all of the SASS utilities available
     - Inject Reset CSS
+
+3. Read the [documentation](#documentation)
 
 For non-SASS projects include `dist/reset.css` only.
 
@@ -165,11 +167,11 @@ $easing-in-out-quint
 $easing-in-expo
 $easing-out-expo
 $easing-in-out-expo
-// Circ
+// Circ:
 $easing-in-circ
 $easing-out-circ
 $easing-in-out-circ
-// Back
+// Back:
 $easing-in-back
 $easing-out-back
 $easing-in-out-back
