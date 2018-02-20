@@ -1,7 +1,5 @@
 # Kollegorna's SASS utilities library
 
-A starter package for every SASS project.
-
 - [Usage](#usage)
 - [Development](#development)
 - [Documentation](#documentation)
