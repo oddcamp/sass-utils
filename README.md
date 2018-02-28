@@ -6,7 +6,7 @@
   * [Media Queries](#media-queries)
   * [Units](#units)
   * [String](#string)
-  * [Type](#type)
+  * [Text](#text)
   * [Animations](#animations)
   * [Misc](#misc)
 
@@ -136,13 +136,13 @@ background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.o
 
 Replaces strings: `str-replace("abc", "a", "b") -> "bbc"`.
 
-### [Type](https://github.com/kollegorna/sass-utils/blob/master/src/_type.scss)
+### [Text](https://github.com/kollegorna/sass-utils/blob/master/src/_text.scss)
 
-#### `text-overflow-ellipsis()` mixin
+#### `truncate-text($method: ellipsis)` mixin
 
-Hides the text in a block element and appends ellipsis, e.g. `Today is...`.
+Determines how overflowed content that is not displayed is [signaled to users](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow).
 
-#### `text-hidden()` mixin
+#### `hide-text()` mixin
 
 Visually hides the text without a [performance hit](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/). Keeps the text accessible for screen readers.
 

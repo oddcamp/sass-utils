@@ -1,16 +1,16 @@
 // -----------------------------------------------------------------------------
-// TEXT OVERFLOW ELLIPSIS
+// TRUNCATES TEXT
 
-@mixin text-overflow-ellipsis {
-  text-overflow: ellipsis;
+@mixin truncate-text($method: ellipsis) {
+  text-overflow: $method;
   white-space: nowrap;
   overflow: hidden;
 }
 
 // -----------------------------------------------------------------------------
-// HIDDEN TEXT
+// HIDES TEXT
 
-@mixin text-hidden {
+@mixin hide-text {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
