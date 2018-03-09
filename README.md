@@ -193,6 +193,6 @@ $easing-in-out-back
 
 Clears and "unclears" floats respectively.
 
-#### `vhidden()` mixin
+#### `hide-visually()` mixin
 
 Visually hides an element, keeps it accessible for screen readers, does not exclude it from HTML tab order.
