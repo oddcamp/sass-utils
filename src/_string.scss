@@ -17,13 +17,15 @@
 //  - background-image: url(svg-inline('<svg viewBox="0 0 10 10"><style>path{fill:#c00;}</style><path d="m5 9-3-4h2v-4h2v4h2z"/></svg>'));
 
 @function svg-inline($string) {
-  $result: str-replace($string, "<svg", "<svg xmlns='http://www.w3.org/2000/svg'");
-  $result: str-replace($result, "%", "%25");
-  $result: str-replace($result, '"', "%22");
-  $result: str-replace($result, "'", "%27");
-  $result: str-replace($result, " ", "%20");
-  $result: str-replace($result, "<", "%3C");
-  $result: str-replace($result, ">", "%3E");
+  @if (not str-index($string, 'http://www.w3.org/2000/svg')) {
+    $string: str-replace($string, "<svg", "<svg xmlns='http://www.w3.org/2000/svg'");
+  }
 
-  @return "data:image/svg+xml;utf8," + $result;
+  $string: str-replace($string, '"', "'");
+  $string: str-replace($string, '<', '%3C');
+  $string: str-replace($string, '>', '%3E');
+  $string: str-replace($string, '&', '%26');
+  $string: str-replace($string, '#', '%23');
+
+  @return "data:image/svg+xml;utf8,#{$string}";
 }

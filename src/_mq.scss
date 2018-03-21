@@ -67,8 +67,6 @@ $mq-breakpoints: (
     $is_first: false;
   }
 
-  @debug #{$conditions_str};
-
   @media #{$conditions_str} {
     @content;
   }
