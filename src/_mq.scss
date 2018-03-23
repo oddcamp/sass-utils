@@ -23,35 +23,39 @@ $mq-breakpoints: (
 //  - mq(between small large)
 //  - mq(portrait)
 //  - mq(portrait, between small medium, xxxxlarge up, xsmall down)
+// Numeric values instead of keywords are acceptable as well:
+//  - mq(960 down)
+//  - mq(between 480 768)
 
 @mixin mq($args...) {
   $conditions: ();
-  $medium:     "screen";
+  $medium: "screen";
 
   @each $group in $args {
     $arg1: nth($group, 1);
 
+    // orientation
     @if index(("landscape", "portrait"), $arg1) {
       $conditions: append($conditions, '(orientation: #{$arg1})');
     }
+    // between
     @else if $arg1 == "between" {
-      $from:       em(map-get($mq-breakpoints, nth($group, 2)) + 1);
-      $to:         em(map-get($mq-breakpoints, nth($group, 3)));
+      $from: get-mq-point(nth($group, 2), "up");
+      $to: get-mq-point(nth($group, 3), "down");
       $conditions: append($conditions, "(min-width: #{$from}) and (max-width: #{$to})");
     }
-    @else { // breakpoint
-      $point:     map-get($mq-breakpoints, $arg1);
+    // up|down
+    @else {
       $direction: nth($group, 2);
+      $point: get-mq-point($arg1, $direction);
 
       @if $direction == "up" {
         $direction: "min-width";
-        $point: $point + 1;
       }
-      @else {
+      @else { // down
         $direction: "max-width";
       }
 
-      $point: em($point);
       $conditions: append($conditions, '(#{$direction}: #{$point})');
     }
   }
@@ -70,4 +74,21 @@ $mq-breakpoints: (
   @media #{$conditions_str} {
     @content;
   }
+}
+
+// get mq()-ready breakpoint value
+
+@function get-mq-point($value, $direction) {
+  @if type-of($value) == "string" {
+    $value: map-get($mq-breakpoints, $value);
+  }
+  @else {
+    $value: strip-unit($value);
+  }
+
+  @if $direction == "up" {
+    $value: $value + 1;
+  }
+
+  @return em($value);
 }

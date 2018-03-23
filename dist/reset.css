@@ -18,13 +18,11 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-/* line 30, src/reset.scss */
+/* line 27, src/reset.scss */
 html {
   font-weight: 400;
   line-height: 1.4;
@@ -36,7 +34,7 @@ html {
   -ms-touch-action: manipulation;
   touch-action: manipulation; }
 
-/* line 46, src/reset.scss */
+/* line 43, src/reset.scss */
 main,
 article,
 aside,
@@ -48,71 +46,71 @@ figcaption,
 figure {
   display: block; }
 
-/* line 58, src/reset.scss */
+/* line 55, src/reset.scss */
 svg {
   fill: currentColor;
   vertical-align: middle;
   pointer-events: none; }
 
-/* line 64, src/reset.scss */
+/* line 61, src/reset.scss */
 ul,
 ol {
   list-style: none; }
 
-/* line 69, src/reset.scss */
+/* line 66, src/reset.scss */
 strong {
   font-weight: bolder; }
 
-/* line 73, src/reset.scss */
+/* line 70, src/reset.scss */
 em {
   font-style: italic; }
 
-/* line 77, src/reset.scss */
+/* line 74, src/reset.scss */
 code,
 kbd,
 samp {
   font-family: "monospace", monospace;
   font-size: 1em; }
 
-/* line 84, src/reset.scss */
+/* line 81, src/reset.scss */
 input,
 textarea,
 select {
   -webkit-appearance: none;
   -moz-appearance: textfield; }
 
-/* line 91, src/reset.scss */
+/* line 88, src/reset.scss */
 button {
   cursor: pointer; }
 
-/* line 95, src/reset.scss */
+/* line 92, src/reset.scss */
 select:-moz-focusring {
   text-shadow: 0 0 0 #000;
   color: transparent; }
 
-/* line 100, src/reset.scss */
+/* line 97, src/reset.scss */
 input::-webkit-search-cancel-button,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-/* line 107, src/reset.scss */
+/* line 104, src/reset.scss */
 input::-ms-reveal {
   display: none; }
 
-/* line 108, src/reset.scss */
+/* line 105, src/reset.scss */
 input::-ms-clear {
   display: none; }
 
-/* line 110, src/reset.scss */
+/* line 107, src/reset.scss */
 input::-webkit-input-placeholder {
   opacity: 1; }
 
-/* line 111, src/reset.scss */
+/* line 108, src/reset.scss */
 input::-moz-placeholder {
   opacity: 1; }
 
-/* line 112, src/reset.scss */
+/* line 109, src/reset.scss */
 input:-ms-input-placeholder {
   opacity: 1; }

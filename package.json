@@ -4,7 +4,7 @@
   "description": "Kollegorna's SASS utilities",
   "main": "src/_all.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0"
   },
+  "dependencies": {},
   "stylelint": {
     "extends": "stylelint-config-standard",
     "rules": {
@@ -51,6 +52,5 @@
         }
       ]
     }
-  },
-  "dependencies": {}
+  }
 }

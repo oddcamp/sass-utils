@@ -30,7 +30,7 @@ For non-SASS projects include `dist/reset.css` only.
 ## Development
 
 1. Install dependencies with `$ yarn`
-2. Run `$ gulp` when developing. This will:
+2. Run `$ yarn dev` when developing. This will:
     - Run the linter for your own good
     - Generate `reset.css` file for non-SASS projects
 
@@ -94,6 +94,20 @@ A media query mixin. Works in a couple with `$mq-breakpoints` map. Accepts multi
     // orientation: portrait AND <= 480px
     // screen and (orientation: portrait) and (max-width: 20em)
   }
+}
+```
+
+Using numeric values instead of keywords is also acceptable, e.g.:
+
+```scss
+@include mq(960 down) {
+  // <= 960px
+  // screen and (max-width: 60em)
+}
+
+@include mq(between 480 768) {
+  // 480px < x <= 768px
+  // screen and (min-width: 30.0625em) and (max-width: 48em)
 }
 ```
 

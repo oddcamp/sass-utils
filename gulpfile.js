@@ -4,7 +4,6 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const stylelint = require('gulp-stylelint')
 
-
 gulp.task('sass', () => {
   return gulp.src('./src/**/*.scss')
     .pipe(sass({sourceComments: true}).on('error', sass.logError))
