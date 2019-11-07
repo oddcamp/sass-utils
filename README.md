@@ -124,6 +124,7 @@ rem(16) // 1rem
 rem(20 40) // 1.25rem 2.5rem
 rem(20 40 0) // 1.25rem 2.5rem 0 2.5rem
 rem(40 auto) // 2.5rem auto
+rem(40 auto 70%) // 2.5rem auto 70%
 ```
 
 Overwrite the value of `$em-base` to change the base value. Default: `16px`. You can also pass it as a second parameter for `em/rem()`.

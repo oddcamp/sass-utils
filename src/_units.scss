@@ -13,6 +13,7 @@
 //  - rem(10 20)
 //  - rem(10 20 30 40)
 //  - rem(20 auto)
+//  - rem(20 auto 70%)
 
 $em-base: 16px !default;
 
@@ -30,7 +31,7 @@ $em-base: 16px !default;
   @for $i from 1 through $max {
     $iVal: nth($values, $i);
 
-    @if $iVal != auto {
+    @if $iVal != auto and unit($iVal) != "%" {
       $iVal: strip-unit($iVal) / strip-unit($base-value) * $type;
     }
 
