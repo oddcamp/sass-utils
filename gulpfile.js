@@ -7,6 +7,7 @@ const stylelint = require('gulp-stylelint')
 gulp.task('sass', gulp.series(() =>
   gulp.src('./src/**/*.scss')
     .pipe(sass({sourceComments: true}).on('error', sass.logError))
+    .pipe(stylelint({fix: true}))
     .pipe(gulp.dest('./dist'))
 ))
 
