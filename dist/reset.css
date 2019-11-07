@@ -84,33 +84,37 @@ button {
   cursor: pointer; }
 
 /* line 92, src/reset.scss */
+select::-ms-expand {
+  display: none; }
+
+/* line 96, src/reset.scss */
 select:-moz-focusring {
   text-shadow: 0 0 0 #000;
   color: transparent; }
 
-/* line 97, src/reset.scss */
+/* line 101, src/reset.scss */
 input::-webkit-search-cancel-button,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
 
-/* line 104, src/reset.scss */
+/* line 108, src/reset.scss */
 input::-ms-reveal {
   display: none; }
 
-/* line 105, src/reset.scss */
+/* line 109, src/reset.scss */
 input::-ms-clear {
   display: none; }
 
-/* line 107, src/reset.scss */
+/* line 111, src/reset.scss */
 input::-webkit-input-placeholder {
   opacity: 1; }
 
-/* line 108, src/reset.scss */
+/* line 112, src/reset.scss */
 input::-moz-placeholder {
   opacity: 1; }
 
-/* line 109, src/reset.scss */
+/* line 113, src/reset.scss */
 input:-ms-input-placeholder {
   opacity: 1; }
