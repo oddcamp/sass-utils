@@ -111,6 +111,23 @@ Using numeric values instead of keywords is also acceptable, e.g.:
 }
 ```
 
+#### `mq-retina()` mixin
+
+A media query for targeting high-res screens.
+
+```scss
+  @include mq-retina {
+    // retina
+  }
+
+  @include mq-retina {
+    @include mq(960 down) {
+      // <= 960px retina
+      // screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 60em), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 60em), screen and (min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min-resolution: 192dpi) and (max-width: 60em), screen and (min-resolution: 2dppx) and (max-width: 60em)
+    }
+  }
+```
+
 ### [Units](https://github.com/kollegorna/sass-utils/blob/master/src/_units.scss)
 
 #### `em()` and `rem()` functions

@@ -76,6 +76,22 @@ $mq-breakpoints: (
   }
 }
 
+// -----------------------------------------------------------------------------
+// RETINA QUERY
+
+@mixin mq-retina {
+  @media
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (min--moz-device-pixel-ratio: 2),
+    screen and (-o-min-device-pixel-ratio: 2/1),
+    screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // get mq()-ready breakpoint value
 
 @function get-mq-point($value, $direction) {
