@@ -118,13 +118,13 @@ Using numeric values instead of keywords is also acceptable, e.g.:
 Converts pixels to em/rem's respectively, e.g.:
 
 ```scss
-em(20) // 1.25em
-em(20px) // 1.25em
-rem(16) // 1rem
-rem(20 40) // 1.25rem 2.5rem
-rem(20 40 0) // 1.25rem 2.5rem 0 2.5rem
-rem(40 auto) // 2.5rem auto
-rem(40 auto 70%) // 2.5rem auto 70%
+em(20); // 1.25em
+em(20px); // 1.25em
+rem(16); // 1rem
+rem(20 40); // 1.25rem 2.5rem
+rem(20 40 0); // 1.25rem 2.5rem 0 2.5rem
+rem(40 auto); // 2.5rem auto
+rem(40 auto 70%); // 2.5rem auto 70%
 ```
 
 Overwrite the value of `$em-base` to change the base value. Default: `16px`. You can also pass it as a second parameter for `em/rem()`.
@@ -156,6 +156,16 @@ Replaces strings: `str-replace("abc", "a", "b") -> "bbc"`.
 #### `truncate-text($method: ellipsis)` mixin
 
 Determines how overflowed content that is not displayed is [signaled to users](https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow).
+
+#### `truncate-text-line($num: 3, $fallback-lh: null)` mixin
+
+Limiting of the contents of a block container to the specified number of lines. Based on [`line-clamp`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp).
+Use `$fallback-lh` to support IE by setting the line height size.
+
+```scss
+@include truncate-text-line(2);
+@include truncate-text-line(2, rem(24));
+```
 
 #### `hide-text()` mixin
 
