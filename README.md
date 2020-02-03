@@ -3,25 +3,26 @@
 - [Usage](#usage)
 - [Development](#development)
 - [Documentation](#documentation)
-  * [Media Queries](#media-queries)
-  * [Units](#units)
-  * [String](#string)
-  * [Text](#text)
-  * [Animations](#animations)
-  * [Misc](#misc)
+  - [Media Queries](#media-queries)
+  - [Units](#units)
+  - [String](#string)
+  - [Text](#text)
+  - [Animations](#animations)
+  - [Misc](#misc)
 
 ## Usage
 
-1. Install with `$ yarn add kollegorna/sass-utils#commit`. Using commit ID is highly recommended. Pick the [latest commit](https://github.com/kollegorna/sass-utils/commits/master) for a new project
+1. Install with `$ yarn add @kollegorna/sass-utils`.
 2. Add it to your project:
 
    ```scss
    @import "sass-utils/src/all";
    ```
 
-    This will:
-    - Make all of the SASS utilities available
-    - Inject Reset CSS
+   This will:
+
+   - Make all of the SASS utilities available
+   - Inject Reset CSS
 
 3. Read the [documentation](#documentation)
 
@@ -31,8 +32,9 @@ For non-SASS projects include `dist/reset.css` only.
 
 1. Install dependencies with `$ yarn`
 2. Run `$ yarn dev` when developing. This will:
-    - Run the linter for your own good
-    - Generate `reset.css` file for non-SASS projects
+
+   - Run the linter for your own good
+   - Generate `reset.css` file for non-SASS projects
 
 3. Edit contents of `src`
 
@@ -46,15 +48,15 @@ A map of viewport breakpoints for a use with `mq()` mixin. Default value:
 
 ```scss
 $mq-breakpoints: (
-  xxxsmall:  0,
-  xxsmall:   320,
-  xsmall:    480,
-  small:     640,
-  medium:    768,
-  large:     960,
-  xlarge:    1024,
-  xxlarge:   1200,
-  xxxlarge:  1400,
+  xxxsmall: 0,
+  xxsmall: 320,
+  xsmall: 480,
+  small: 640,
+  medium: 768,
+  large: 960,
+  xlarge: 1024,
+  xxlarge: 1200,
+  xxxlarge: 1400,
   xxxxlarge: 1680
 );
 ```
@@ -116,16 +118,16 @@ Using numeric values instead of keywords is also acceptable, e.g.:
 A media query for targeting high-res screens.
 
 ```scss
-  @include mq-retina {
-    // retina
-  }
+@include mq-retina {
+  // retina
+}
 
-  @include mq-retina {
-    @include mq(960 down) {
-      // <= 960px retina
-      // screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 60em), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 60em), screen and (min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min-resolution: 192dpi) and (max-width: 60em), screen and (min-resolution: 2dppx) and (max-width: 60em)
-    }
+@include mq-retina {
+  @include mq(960 down) {
+    // <= 960px retina
+    // screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min--moz-device-pixel-ratio: 2) and (max-width: 60em), screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 60em), screen and (min-device-pixel-ratio: 2) and (max-width: 60em), screen and (min-resolution: 192dpi) and (max-width: 60em), screen and (min-resolution: 2dppx) and (max-width: 60em)
   }
+}
 ```
 
 ### [Units](https://github.com/kollegorna/sass-utils/blob/master/src/_units.scss)
@@ -157,7 +159,9 @@ Returns digits-only value: `strip-unit(16px) -> 16`.
 Makes SVG inline-able, e.g.:
 
 ```scss
-background-image: url(svg-inline('<svg viewBox="0 0 10 10"><style>path{fill:#c00;}</style><path d="m5 9-3-4h2v-4h2v4h2z"/></svg>'));
+background-image: url(svg-inline(
+  '<svg viewBox="0 0 10 10"><style>path{fill:#c00;}</style><path d="m5 9-3-4h2v-4h2v4h2z"/></svg>'
+));
 
 // becomes
 
