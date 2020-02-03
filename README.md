@@ -12,7 +12,7 @@
 
 ## Usage
 
-1. Install with `$ yarn add @kollegorna/sass-utils#commit`.
+1. Install with `$ yarn add @kollegorna/sass-utils`.
 2. Add it to your project:
 
    ```scss
