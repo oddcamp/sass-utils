@@ -39,8 +39,11 @@ $mq-breakpoints: (
       $conditions: append($conditions, '(orientation: #{$arg1})');
     }
     // between
-    @else if $arg1 == "between" {
+    @else if index(("between", "betweenEq"), $arg1) {
       $from: get-mq-point(nth($group, 2), "up");
+      @if $arg1 == "betweenEq" {
+        $from: get-mq-point(nth($group, 2), "upEq");
+      }
       $to: get-mq-point(nth($group, 3), "down");
       $conditions: append($conditions, "(min-width: #{$from}) and (max-width: #{$to})");
     }
@@ -49,7 +52,7 @@ $mq-breakpoints: (
       $direction: nth($group, 2);
       $point: get-mq-point($arg1, $direction);
 
-      @if $direction == "up" {
+      @if index(("up", "upEq"), $arg1) {
         $direction: "min-width";
       }
       @else { // down

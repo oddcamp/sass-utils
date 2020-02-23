@@ -76,9 +76,19 @@ A media query mixin. Works in a couple with `$mq-breakpoints` map. Accepts multi
   // screen and (min-width: 60.0625em)
 }
 
+@include mq(large upEq) {
+  // >= 960px
+  // screen and (min-width: 60em)
+}
+
 @include mq(between small large) {
   // 640px < x <= 960px
   // screen and (min-width: 40.0625em) and (max-width: 60em)
+}
+
+@include mq(betweenEq small large) {
+  // 640px <= x <= 960px
+  // screen and (min-width: 40em) and (max-width: 60em)
 }
 
 @include mq(portrait) {

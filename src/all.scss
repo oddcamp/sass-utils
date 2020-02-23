@@ -5,11 +5,3 @@
 @import "mq";
 @import "animations";
 @import "misc";
-
-label {
-  @include mq-retina {
-    @include mq(960 down) {
-      border: 1px solid red;
-    }
-  }
-}
