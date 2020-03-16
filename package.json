@@ -1,6 +1,6 @@
 {
   "name": "@kollegorna/sass-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Kollegorna's SASS utilities",
   "author": "Kollegorna",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "url": "https://github.com/kollegorna/sass-utils/issues"
   },
   "engines": {
-    "node": "12"
+    "node": ">=8.0.0"
   },
   "scripts": {
     "dev": "gulp"
