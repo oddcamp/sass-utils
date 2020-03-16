@@ -23,7 +23,7 @@
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2",
     "gulp-stylelint": "^13.0.0",
-    "stylelint": "^13.2.0",
+    "stylelint": "^13.2.1",
     "stylelint-config-standard": "^20.0.0"
   },
   "dependencies": {}
