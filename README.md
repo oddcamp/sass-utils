@@ -15,8 +15,8 @@
 1. Install with `$ yarn add @kollegorna/sass-utils`.
 2. Add it to your project:
 
-   ```scss
-   @import "sass-utils/src/all";
+   ```sass
+   @import "@kollegorna/sass-utils/src/all";
    ```
 
    This will:
