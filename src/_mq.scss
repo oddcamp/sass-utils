@@ -52,7 +52,7 @@ $mq-breakpoints: (
       $direction: nth($group, 2);
       $point: get-mq-point($arg1, $direction);
 
-      @if index(("up", "upEq"), $arg1) {
+      @if index(("up", "upEq"), $direction) {
         $direction: "min-width";
       }
       @else { // down
