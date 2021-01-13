@@ -1,4 +1,4 @@
-# Kollegorna's SASS utilities library
+# Odd Camp's SASS utilities library
 
 - [Usage](#usage)
 - [Development](#development)
@@ -12,11 +12,11 @@
 
 ## Usage
 
-1. Install with `$ yarn add @kollegorna/sass-utils`.
+1. Install with `$ yarn add @oddcamp/sass-utils`.
 2. Add it to your project:
 
    ```sass
-   @import "@kollegorna/sass-utils/src/all";
+   @import "@oddcamp/sass-utils/src/all";
    ```
 
    This will:
@@ -40,7 +40,7 @@ For non-SASS projects include `dist/reset.css` only.
 
 ## Documentation
 
-### [Media Queries](https://github.com/kollegorna/sass-utils/blob/master/src/_mq.scss)
+### [Media Queries](https://github.com/oddcamp/sass-utils/blob/master/src/_mq.scss)
 
 #### `$mq-breakpoints` variable
 
@@ -57,7 +57,7 @@ $mq-breakpoints: (
   xlarge: 1024,
   xxlarge: 1200,
   xxxlarge: 1400,
-  xxxxlarge: 1680
+  xxxxlarge: 1680,
 );
 ```
 
@@ -140,7 +140,7 @@ A media query for targeting high-res screens.
 }
 ```
 
-### [Units](https://github.com/kollegorna/sass-utils/blob/master/src/_units.scss)
+### [Units](https://github.com/oddcamp/sass-utils/blob/master/src/_units.scss)
 
 #### `em()` and `rem()` functions
 
@@ -162,7 +162,7 @@ Overwrite the value of `$em-base` to change the base value. Default: `16px`. You
 
 Returns digits-only value: `strip-unit(16px) -> 16`.
 
-### [String](https://github.com/kollegorna/sass-utils/blob/master/src/_string.scss)
+### [String](https://github.com/oddcamp/sass-utils/blob/master/src/_string.scss)
 
 #### `svg-inline()` function
 
@@ -182,7 +182,7 @@ background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.o
 
 Replaces strings: `str-replace("abc", "a", "b") -> "bbc"`.
 
-### [Text](https://github.com/kollegorna/sass-utils/blob/master/src/_text.scss)
+### [Text](https://github.com/oddcamp/sass-utils/blob/master/src/_text.scss)
 
 #### `truncate-text($method: ellipsis)` mixin
 
@@ -202,7 +202,7 @@ Use `$fallback-lh` to support IE by setting the line height size.
 
 Visually hides the text without a [performance hit](http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/). Keeps the text accessible for screen readers.
 
-### [Animations](https://github.com/kollegorna/sass-utils/blob/master/src/_animations.scss)
+### [Animations](https://github.com/oddcamp/sass-utils/blob/master/src/_animations.scss)
 
 #### Easings
 
@@ -243,7 +243,7 @@ $easing-out-back
 $easing-in-out-back
 ```
 
-### [Misc](https://github.com/kollegorna/sass-utils/blob/master/src/_misc.scss)
+### [Misc](https://github.com/oddcamp/sass-utils/blob/master/src/_misc.scss)
 
 #### `clearfix()` and `unclearfix()` mixins
 
