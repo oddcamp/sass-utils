@@ -1,17 +1,17 @@
 {
-  "name": "@kollegorna/sass-utils",
+  "name": "@oddcamp/sass-utils",
   "version": "1.0.5",
-  "description": "Kollegorna's SASS utilities",
-  "author": "Kollegorna",
+  "description": "Odd Camp's SASS utilities",
+  "author": "Odd Camp",
   "license": "MIT",
   "main": "src/_all.scss",
-  "homepage": "https://github.com/kollegorna/sass-utils",
+  "homepage": "https://github.com/oddcamp/sass-utils",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kollegorna/sass-utils.git"
+    "url": "git+https://github.com/oddcamp/sass-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/kollegorna/sass-utils/issues"
+    "url": "https://github.com/oddcamp/sass-utils/issues"
   },
   "engines": {
     "node": ">=8.0.0"
