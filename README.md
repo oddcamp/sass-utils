@@ -15,7 +15,7 @@
 1. Install with `$ yarn add @oddcamp/sass-utils`.
 2. Add it to your project:
 
-   ```sass
+   ```scss
    @import "@oddcamp/sass-utils/src/all";
    ```
 

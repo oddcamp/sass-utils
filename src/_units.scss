@@ -2,7 +2,7 @@
 // STRIP UNIT
 
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, ($num * 0 + 1));
 }
 
 // -----------------------------------------------------------------------------
@@ -32,7 +32,7 @@ $em-base: 16px !default;
     $iVal: nth($values, $i);
 
     @if $iVal != auto and unit($iVal) != "%" {
-      $iVal: strip-unit($iVal) / strip-unit($base-value) * $type;
+      $iVal: math.div(strip-unit($iVal), strip-unit($base-value)) * $type;
     }
 
     $newValues: append($newValues, $iVal);

@@ -1,4 +1,3 @@
-/* line 1, src/reset.scss */
 * {
   font-size: 100%;
   font-family: inherit;
@@ -15,7 +14,6 @@
   margin: 0;
 }
 
-/* line 17, src/reset.scss */
 *,
 *::before,
 *::after {
@@ -24,7 +22,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 27, src/reset.scss */
 html {
   font-weight: 400;
   line-height: 1.4;
@@ -37,7 +34,6 @@ html {
   touch-action: manipulation;
 }
 
-/* line 43, src/reset.scss */
 main,
 article,
 aside,
@@ -50,30 +46,25 @@ figure {
   display: block;
 }
 
-/* line 55, src/reset.scss */
 svg {
   fill: currentColor;
   vertical-align: middle;
   pointer-events: none;
 }
 
-/* line 61, src/reset.scss */
 ul,
 ol {
   list-style: none;
 }
 
-/* line 66, src/reset.scss */
 strong {
   font-weight: bolder;
 }
 
-/* line 70, src/reset.scss */
 em {
   font-style: italic;
 }
 
-/* line 74, src/reset.scss */
 code,
 kbd,
 samp {
@@ -81,7 +72,6 @@ samp {
   font-size: 1em;
 }
 
-/* line 81, src/reset.scss */
 input,
 textarea,
 select {
@@ -89,23 +79,19 @@ select {
   -moz-appearance: textfield;
 }
 
-/* line 88, src/reset.scss */
 button {
   cursor: pointer;
 }
 
-/* line 92, src/reset.scss */
 select::-ms-expand {
   display: none;
 }
 
-/* line 96, src/reset.scss */
 select:-moz-focusring {
   text-shadow: 0 0 0 #000;
   color: transparent;
 }
 
-/* line 101, src/reset.scss */
 input::-webkit-search-cancel-button,
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -113,27 +99,22 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* line 108, src/reset.scss */
 input::-ms-reveal {
   display: none;
 }
 
-/* line 109, src/reset.scss */
 input::-ms-clear {
   display: none;
 }
 
-/* line 111, src/reset.scss */
 input::-webkit-input-placeholder {
   opacity: 1;
 }
 
-/* line 112, src/reset.scss */
 input::-moz-placeholder {
   opacity: 1;
 }
 
-/* line 113, src/reset.scss */
 input:-ms-input-placeholder {
   opacity: 1;
 }
